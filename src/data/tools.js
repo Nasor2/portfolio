@@ -1,14 +1,14 @@
 // src/data/tools.js
-import Python from "../assets/images/icons/python.png"
-import SQL from "../assets/images/icons/SQL.png"
-import ChartBar from "../assets/images/icons/POWER_BI.svg"
-import JS from "../assets/images/icons/JS.png"
-import Excel from "../assets/images/icons/Excel.png"
-import git  from "../assets/images/icons/git.png"
-import react from "../assets/images/icons/react.svg"
-import GCloudPlatform from "../assets/images/icons/Google-cloud-platform.svg"
-import Spark from "../assets/images/icons/Apache Spark.svg"
-import ScikitLearn from "../assets/images/icons/Scikit.png"
+import Python from "../assets/images/Icons/python.png"
+import SQL from "../assets/images/Icons/SQL.png"
+import ChartBar from "../assets/images/Icons/POWER_BI.svg"
+import JS from "../assets/images/Icons/JS.png"
+import Excel from "../assets/images/Icons/Excel.png"
+import git  from "../assets/images/Icons/git.png"
+import react from "../assets/images/Icons/react.svg"
+import GCloudPlatform from "../assets/images/Icons/Google-cloud-platform.svg"
+import Spark from "../assets/images/Icons/Apache Spark.svg"
+import ScikitLearn from "../assets/images/Icons/Scikit.png"
 
 export const TOOLS = [
   {
