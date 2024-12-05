@@ -7,6 +7,7 @@ import Mood from "../assets/images/projects/Mood.jpg"
 import Pokemons from "../assets/images/projects/pokemons.jpg"
 import TaskList from "../assets/images/projects/task_list.jpg"
 import Accidentality from "../assets/images/projects/Accidentality.jpg"
+import ECommerce from "../assets/images/projects/E-commerce.jpg"
 
 export const COLORS = {
   primary: {
@@ -27,6 +28,16 @@ export const COLORS = {
 };
 
 export const PROJECTS = [
+  {
+    title: "TiendaYa: eCommerce in Barranquilla",
+    description:
+      "Analyzed traffic accidents in Barranquilla to identify patterns and predict severity, aiding in safety improvements.",
+    tags: ["Web Development", "eCommerce", "React", "Node.js", "NySQL", "JavaScript", "Claudinary", "Clever Cloud", "Cloud Storage"],
+    categories: ["Web Development"],
+    image: ECommerce,
+    githubLink: "https://github.com/Nasor2/tiendaYa-project",
+    impact: "Enhancing local eCommerce and digital accessibility.",
+  },
   {
     title: "Accidentality in Barranquilla Colombia",
     description:

@@ -1,5 +1,5 @@
 import React from "react";
-import { Globe, Github, Sparkles, Award } from "lucide-react";
+import { Globe, Github, Award } from "lucide-react";
 import kaggle from "../assets/images/Icons/kaggle_k_short.svg";
 
 export const ProjectCard = ({
@@ -19,12 +19,7 @@ export const ProjectCard = ({
         alt={title}
         className="w-full h-64 object-cover filter brightness-90 group-hover:brightness-75 transition-all duration-300 group-hover:scale-105"
       />
-      <div className="absolute top-4 right-4 bg-gradient-to-br from-yellow-200 via-gray-200 to-yellow-100 text-gray-700 rounded-full p-3 shadow-lg animate-pulse-slow">
-        <Sparkles 
-          size={20} 
-          className="text-yellow-500" 
-        />
-      </div>
+      
     </div>
     
     <div className="p-6 md:p-8 space-y-4 flex-grow flex flex-col">

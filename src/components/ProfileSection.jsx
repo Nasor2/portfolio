@@ -74,9 +74,7 @@ export const ProfileSection = () => {
     },
   ];
 
-  const toggleBackgroundVariant = () => {
-    setBackgroundVariant((prev) => (prev + 1) % backgroundVariants.length);
-  };
+
 
   return (
     <motion.section
@@ -86,14 +84,7 @@ export const ProfileSection = () => {
       transition={{ duration: 0.8, type: "spring", stiffness: 120 }}
       className={`relative flex items-center rounded-3xl p-8 md:p-12 gap-8 md:gap-16 overflow-hidden lg:flex-row flex-col bg-gradient-to-br ${backgroundVariants[backgroundVariant]}`}
     >
-      {/* Background Variant Switcher */}
-      <motion.button
-        onClick={toggleBackgroundVariant}
-        whileHover={{ scale: 1.1, rotate: 45 }}
-        className="absolute top-4 right-4 z-20 bg-white/30 p-2 rounded-full hover:bg-white/50 transition-all"
-      >
-        <PaletteIcon className="w-6 h-6 text-gray-700" />
-      </motion.button>
+
 
       <motion.div
         drag
