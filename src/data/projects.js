@@ -32,7 +32,7 @@ export const PROJECTS = [
     title: "TiendaYa: eCommerce in Barranquilla",
     description:
       "Analyzed traffic accidents in Barranquilla to identify patterns and predict severity, aiding in safety improvements.",
-    tags: ["Web Development", "eCommerce", "React", "Node.js", "NySQL", "JavaScript", "Claudinary", "Clever Cloud", "Cloud Storage"],
+    tags: ["Web Development", "eCommerce", "React", "Node.js", "MySQL", "JavaScript", "Claudinary", "Clever Cloud", "Cloud Storage"],
     categories: ["Web Development"],
     image: ECommerce,
     githubLink: "https://github.com/Nasor2/tiendaYa-project",
