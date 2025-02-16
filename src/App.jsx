@@ -10,17 +10,7 @@ import "./App.css";
 
 function App() {
   const [activeFilter, setActiveFilter] = useState("All");
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const { scrollYProgress } = useScroll();
 
-  useEffect(() => {
-    const unsubscribe = scrollYProgress.onChange((latest) => {
-      setScrollProgress(latest * 100);
-    });
-
-    return () => unsubscribe();
-  }, [scrollYProgress]);
-  
   // Dynamically generate categories
   const categories = useMemo(() => {
     const allCategories = PROJECTS.flatMap(project => project.categories);
@@ -36,15 +26,7 @@ function App() {
 
   return (
     <div className="min-h-screen relative">
-      {/* Scroll Progress Indicator */}
-      <motion.div 
-        style={{ 
-          scaleX: scrollProgress / 100,
-          transformOrigin: 'left center'
-        }}
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-600 to-indigo-600 z-50 origin-left"
-      />
-
+ 
       {/* Decorative Background Elements */}
       <motion.div 
         initial={{ opacity: 0, scale: 0.5 }}
@@ -65,7 +47,7 @@ function App() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, type: "spring", stiffness: 120 }}
-          className="shadow-2xl shadow-blue-100/50 rounded-3xl overflow-hidden"
+          className="shadow-2xl overflow-hidden"
         >
           <div className="p-8 md:p-12 space-y-16">
             <ProfileSection />

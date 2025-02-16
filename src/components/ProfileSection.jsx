@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Linkedin, Mail, GithubIcon, Rocket, StarIcon, CodeIcon, PaletteIcon } from "lucide-react";
+import { Linkedin, Mail, GithubIcon } from "lucide-react";
 import profileImage from "../assets/images/Fotojpg.jpg";
 import KaggleLogo from "../assets/images/Icons/kaggle_k_short.svg";
 
@@ -9,7 +9,6 @@ export const ProfileSection = () => {
   const [backgroundVariant, setBackgroundVariant] = useState(0);
   const containerRef = useRef(null);
 
-  // Array of dynamic background gradients
   const backgroundVariants = [
     "from-gray-100 to-gray-200",
     "from-purple-100 to-purple-200",
@@ -74,83 +73,42 @@ export const ProfileSection = () => {
     },
   ];
 
-
-
   return (
     <motion.section
       ref={containerRef}
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8, type: "spring", stiffness: 120 }}
-      className={`relative flex items-center rounded-3xl p-8 md:p-12 gap-8 md:gap-16 overflow-hidden lg:flex-row flex-col bg-gradient-to-br ${backgroundVariants[backgroundVariant]}`}
+      className={`relative flex items-center rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 gap-4 sm:gap-6 md:gap-8 lg:gap-16 overflow-hidden lg:flex-row flex-col bg-gradient-to-br ${backgroundVariants[backgroundVariant]}`}
     >
-
-
-      <motion.div
-        drag
-        dragElastic={0.16}
-        whileTap={{ cursor: "grabbing" }}
-        className="w-full md:w-1/3 z-10 relative flex justify-center"
-      >
-        <div className="relative group max-w-[300px] w-full">
+      <div className="w-full sm:w-2/3 md:w-1/2 lg:w-1/3 z-10 relative mx-auto lg:mx-0">
+        <div className="relative group max-w-[250px] sm:max-w-[300px] w-full mx-auto">
           <motion.div
             className="absolute -inset-2 bg-gradient-to-br from-gray-500 to-gray-600 rounded-full opacity-50 group-hover:opacity-70 transition-all duration-300 blur-xl"
             animate={{
-              scale: [1, 1.05, 1],
-              rotate: [0, 5, -5, 0]
+              scale: [1, 1.05, 1]
             }}
             transition={{
               duration: 3,
               repeat: Infinity,
               ease: "easeInOut"
             }}
-          ></motion.div>
+          />
 
           <div className="relative">
             <img
               src={profileImage}
               alt="Samuel Peña"
-              className="relative rounded-full w-full aspect-square border-4 border-gray-500 object-cover shadow-2xl transform transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-3 group-hover:shadow-xl"
+              className="relative rounded-full w-full aspect-square border-4 border-gray-500 object-cover shadow-2xl transition-all duration-300 ease-in-out group-hover:shadow-xl"
             />
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ 
-                opacity: [0, 1, 0],
-                scale: [0.5, 1, 1.5],
-                rotate: [0, 360]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1
-              }}
-              className="absolute -top-4 -right-4 bg-gradient-to-br from-yellow-400 to-orange-500 text-white rounded-full p-3 shadow-2xl"
-            >
-              <StarIcon className="w-6 h-6" />
-            </motion.div>
           </div>
 
-          <motion.div
-            animate={{
-              scale: [1, 1.2, 1],
-              rotate: [0, 20, -20, 0],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="absolute bottom-2 right-2 bg-gradient-to-br from-purple-600 to-purple-800 text-white rounded-full p-3 shadow-2xl"
-          >
-            <Rocket className="w-6 h-6" />
-          </motion.div>
         </div>
-      </motion.div>
+      </div>
 
-      <div className="w-full md:w-2/3 z-10 text-center md:text-left">
+      <div className="w-full lg:w-2/3 z-10 text-center lg:text-left">
         <div>
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-gray-600 to-black flex flex-col md:flex-row items-center justify-center md:justify-start">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-gray-600 to-black flex flex-col lg:flex-row items-center justify-center lg:justify-start">
             Samuel Peña
             <motion.span
               initial={{ opacity: 0, x: -20 }}
@@ -160,26 +118,26 @@ export const ProfileSection = () => {
                 type: "spring",
                 stiffness: 300
               }}
-              className="ml-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-full text-lg shadow-lg hover:scale-105 transition-transform"
+              className="ml-0 lg:ml-4 mt-2 lg:mt-0 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-3 py-1 sm:px-4 sm:py-2 rounded-full text-base sm:text-lg shadow-lg hover:scale-105 transition-transform"
             >
               Systems Engineer
             </motion.span>
           </h1>
 
-          <p className="text-gray-800 mb-6 text-base md:text-xl leading-relaxed group text-center md:text-left tracking-wide">
+          <p className="text-gray-800 mb-6 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed group text-center lg:text-left tracking-wide px-4 sm:px-6 lg:px-0">
             Innovative Systems Engineer transforming complex data into powerful insights. 
             Expert in bridging advanced analytics with cutting-edge technologies to deliver 
             high-impact solutions that push the boundaries of what's possible.
             <motion.span 
               initial={{ opacity: 0 }}
               whileHover={{ opacity: 1 }}
-              className="block mt-2 text-sm text-gray-900 italic opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              className="block mt-2 text-xs sm:text-sm text-gray-900 italic opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             >
               Crafting the future, one data point at a time
             </motion.span>
           </p>
 
-          <div className="flex space-x-4 mt-6 justify-center md:justify-start">
+          <div className="flex flex-wrap gap-4 mt-6 justify-center lg:justify-start px-4 sm:px-6 lg:px-0">
             {socialLinks.map((link, index) => (
               <motion.a
                 key={link.href}
@@ -201,7 +159,7 @@ export const ProfileSection = () => {
                     stiffness: 300 
                   } 
                 }}
-                className={`p-3 rounded-full bg-gradient-to-br ${link.bgGradient} text-white shadow-xl relative overflow-hidden group`}
+                className={`p-2 sm:p-3 rounded-full bg-gradient-to-br ${link.bgGradient} text-white shadow-xl relative overflow-hidden group`}
                 onMouseEnter={() => setHoveredLink(index)}
                 onMouseLeave={() => setHoveredLink(null)}
               >
@@ -213,13 +171,13 @@ export const ProfileSection = () => {
                 {typeof link.icon === "function" ? (
                   <link.icon />
                 ) : (
-                  <link.icon className="w-6 h-6 relative z-10" />
+                  <link.icon className="w-4 h-4 sm:w-6 sm:h-6 relative z-10" />
                 )}
                 {hoveredLink === index && (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded-md"
+                    className="absolute -bottom-8 sm:-bottom-10 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded-md whitespace-nowrap"
                   >
                     {link.label}
                   </motion.div>

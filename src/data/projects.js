@@ -8,6 +8,7 @@ import Pokemons from "../assets/images/projects/pokemons.jpg"
 import TaskList from "../assets/images/projects/task_list.jpg"
 import Accidentality from "../assets/images/projects/Accidentality.jpg"
 import ECommerce from "../assets/images/projects/E-commerce.jpg"
+import Comparendo from "../assets/images/projects/Comparendo.png"
 
 export const COLORS = {
   primary: {
@@ -29,9 +30,19 @@ export const COLORS = {
 
 export const PROJECTS = [
   {
+    title: "Traffic Fines Analysis in Barranquilla",
+    description: "Analysis of traffic fines in Barranquilla, uncovering trends and violations.",
+    tags: ["Data Analysis", "Python", "Data Visualization", "Analysis", "Machine Learning"],
+    categories: ["Data Science", "Data Analysis"],
+    image: Comparendo,
+    kaggleLink: "https://www.kaggle.com/code/samuelpeaortega/comparendos-en-barranquilla-colombia",
+    impact: "Insights into traffic violations.",
+  }
+  ,
+  {
     title: "TiendaYa: eCommerce in Barranquilla",
     description:
-      "Analyzed traffic accidents in Barranquilla to identify patterns and predict severity, aiding in safety improvements.",
+      "E-commerce platform for Barranquilla shopkeepers to easily go digital.",
     tags: ["Web Development", "eCommerce", "React", "Node.js", "MySQL", "JavaScript", "Claudinary", "Clever Cloud", "Cloud Storage"],
     categories: ["Web Development"],
     image: ECommerce,

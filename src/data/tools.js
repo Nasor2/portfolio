@@ -9,6 +9,11 @@ import react from "../assets/images/Icons/react.svg"
 import GCloudPlatform from "../assets/images/Icons/Google-cloud-platform.svg"
 import Spark from "../assets/images/Icons/Apache Spark.svg"
 import ScikitLearn from "../assets/images/Icons/Scikit.png"
+import Flutter from "../assets/images/Icons/flutter.png"
+import Tailwindcss from "../assets/images/Icons/tailwindcss.png"
+import MySQL from "../assets/images/Icons/mysql.png"
+import PHP from "../assets/images/Icons/php.png"
+import NodeJS from "../assets/images/Icons/nodejs.png"
 
 export const TOOLS = [
   {
@@ -16,8 +21,16 @@ export const TOOLS = [
     icon: Python
   },
   {
+    name: "Flutter",
+    icon: Flutter
+  },
+  {
     name: "SQL",
     icon: SQL
+  },
+  {
+    name: "JavaScript",
+    icon: JS
   },
   {
     name: "Power BI",
@@ -28,8 +41,13 @@ export const TOOLS = [
     icon: Excel
   },
   {
-    name: "JavaScript",
-    icon: JS
+    name: "php",
+    icon: PHP
+  }
+  ,
+  {
+    name: "Node.js",
+    icon: NodeJS
   },
   {
     name: "Git",
@@ -40,8 +58,16 @@ export const TOOLS = [
     icon: react
   },
   {
+    name: "Tailwincss",
+    icon: Tailwindcss
+  },
+  {
     name: "Google Cloud Platform",
     icon: GCloudPlatform
+  },
+  {
+    name: "MySQL",
+    icon: MySQL
   },
   {
     name: "Apache Spark",
