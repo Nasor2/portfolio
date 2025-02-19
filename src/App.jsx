@@ -26,7 +26,7 @@ function App() {
   );
 
   return (
-    <div className="min-h-screen relative bg-gray-50">
+    <div className="min-h-screen relative">
       <motion.div 
         className="fixed -top-20 -left-20 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl z-0"
         animate={{ 
