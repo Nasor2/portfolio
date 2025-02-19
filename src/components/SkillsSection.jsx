@@ -91,18 +91,7 @@ const SkillsSection = () => {
 
       onClick={() => setIsOpen(!isOpen)}
     >
-      <motion.div 
-        className="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-600 opacity-20"
-        animate={{
-          rotate: [0, 360],
-          scale: [1, 1.2, 1],
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
+      
       <div className="relative flex items-center justify-between w-full z-10">
         <div className="w-6" />
         <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight flex items-center gap-4">
