@@ -49,33 +49,49 @@ function App() {
           <SkillsSection />
           <ToolsSection />
 
-          <motion.div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
-            <motion.div 
-              className="bg-gradient-to-r from-gray-600 via-gray-800 to-black p-4 sm:p-6 relative overflow-hidden cursor-pointer"
-              onClick={() => setIsOpen(!isOpen)}
+          <motion.div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100">
+          <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.6 }}
+        className="bg-gradient-to-r from-gray-600 via-gray-800 to-black p-4 md:p-6 relative overflow-hidden cursor-pointer"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-600 opacity-20"
+          animate={{
+            rotate: [0, 360],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <div className="relative flex items-center justify-between w-full">
+          <div className="w-6" />
+          <h2 className="text-3xl md:text-5xl font-bold text-white flex items-center gap-2 md:gap-4">
+            Projects
+            <motion.span
+              animate={{
+                scale: [1, 1.2, 1],
+                rotate: [0, 10, -10, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
             >
-              <motion.div 
-                className="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-600 opacity-20"
-                animate={{
-                  rotate: [0, 360],
-                  scale: [1, 1.2, 1],
-                }}
-                transition={{
-                  duration: 10,
-                  repeat: Infinity,
-                }}
-              />
-              <div className="relative flex items-center justify-between w-full">
-                <div className="w-6" />
-                <h2 className="text-3xl sm:text-5xl font-bold text-white flex items-center gap-2 sm:gap-4">
-                  Projects
-                  <CodeIcon className="w-8 h-8 sm:w-6 sm:h-6 text-yellow-300" />
-                </h2>
-                <ChevronDownIcon 
-                  className={`w-6 h-6 text-white transition-transform ${isOpen ? 'rotate-180' : ''}`}
-                />
-              </div>
-            </motion.div>
+              <CodeIcon className="h-5 w-5 md:h-6 md:w-6 text-yellow-300" />
+            </motion.span>
+          </h2>
+          <ChevronDownIcon
+            className={`w-6 h-6 text-white transition-transform ${isOpen ? "rotate-180" : ""}`}
+          />
+        </div>
+      </motion.div>
 
             <AnimatePresence initial={false}>
               {isOpen && (

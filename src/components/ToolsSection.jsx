@@ -12,7 +12,7 @@ export const ToolsSection = () => {
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6, type: "spring", stiffness: 120 }}
-      className="bg-white rounded-xl md:rounded-3xl shadow-lg md:shadow-2xl overflow-hidden border border-gray-100"
+      className="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-2xl overflow-hidden border border-gray-100"
     >
       <motion.div
         initial={{ opacity: 0, y: -50 }}
