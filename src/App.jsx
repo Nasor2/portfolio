@@ -11,7 +11,6 @@ import "./App.css";
 function App() {
   const [activeFilter, setActiveFilter] = useState("All");
 
-  // Dynamically generate categories
   const categories = useMemo(() => {
     const allCategories = PROJECTS.flatMap(project => project.categories);
     return ["All", ...new Set(allCategories)];
@@ -25,127 +24,77 @@ function App() {
   );
 
   return (
-    <div className="min-h-screen relative">
- 
-      {/* Decorative Background Elements */}
+    <div className="min-h-screen relative bg-gray-50">
       <motion.div 
-        initial={{ opacity: 0, scale: 0.5 }}
+        className="fixed -top-20 -left-20 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl z-0"
         animate={{ 
           opacity: [0.1, 0.3, 0.1], 
           scale: [0.5, 0.7, 0.5] 
         }}
         transition={{ 
           duration: 10, 
-          repeat: Infinity, 
-          ease: "easeInOut" 
+          repeat: Infinity 
         }}
-        className="fixed -top-20 -left-20 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl z-0"
       />
 
-      <div className="container mx-auto px-4 py-12 max-w-7xl relative z-10">
+      <div className="container mx-auto px-4 py-6 sm:py-12 max-w-7xl relative z-10">
         <motion.div 
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, type: "spring", stiffness: 120 }}
-          className="shadow-2xl overflow-hidden"
+          className="space-y-8 sm:space-y-16"
         >
-          <div className="p-8 md:p-12 space-y-16">
-            <ProfileSection />
-            <ToolsSection />
+          <ProfileSection />
+          <ToolsSection />
 
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, type: "spring", stiffness: 120 }}
-              className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 relative"
-            >
-              {/* Animated Background Header */}
+          <motion.div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
+            <motion.div className="bg-gradient-to-r from-black via-gray-700 to-gray-500 p-4 sm:p-6 relative overflow-hidden">
               <motion.div 
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
-                className="bg-gradient-to-r from-black via-gray-700 to-gray-500 p-6 relative overflow-hidden"
-              >
-                <motion.div 
-                  className="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-600 opacity-20"
-                  animate={{
-                    rotate: [0, 360],
-                    scale: [1, 1.2, 1],
-                  }}
-                  transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                />
-                <div className="relative z-10 flex items-center justify-center">
-                  <h2 className="text-4xl font-bold text-white text-center flex items-center gap-4">
-                    Projects
-                    <CodeIcon className="text-yellow-300" />
-                  </h2>
-                </div>
-              </motion.div>
-
-              <div className="p-8 md:p-12 space-y-8">
-                <ProjectFilter
-                  categories={categories}
-                  activeFilter={activeFilter}
-                  onFilterChange={setActiveFilter}
-                  className="mb-8 transition-all duration-300 ease-in-out"
-                />
-
-                {filteredProjects.length > 0 ? (
-                  <motion.div 
-                    initial="hidden"
-                    animate="visible"
-                    variants={{
-                      hidden: { opacity: 0 },
-                      visible: {
-                        opacity: 1,
-                        transition: {
-                          delayChildren: 0.3,
-                          staggerChildren: 0.1
-                        }
-                      }
-                    }}
-                    className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr"
-                  >
-                    {filteredProjects.map(project => (
-                      <motion.div
-                        key={project.title}
-                        variants={{
-                          hidden: { opacity: 0, y: 20 },
-                          visible: { 
-                            opacity: 1, 
-                            y: 0,
-                            transition: { type: "spring", stiffness: 300 }
-                          }
-                        }}
-                      >
-                        <ProjectCard {...project} />
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                ) : (
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="text-center py-12 space-y-4"
-                  >
-                    <div className="flex justify-center mb-4">
-                      <MountainIcon className="w-16 h-16 text-gray-300" />
-                    </div>
-                    <p className="text-slate-500 text-xl font-semibold">
-                      No projects found in this category
-                    </p>
-                    <p className="text-slate-400">
-                      Try selecting a different filter
-                    </p>
-                  </motion.div>
-                )}
-              </div>
+                className="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-600 opacity-20"
+                animate={{
+                  rotate: [0, 360],
+                  scale: [1, 1.2, 1],
+                }}
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                }}
+              />
+              <h2 className="text-2xl sm:text-4xl font-bold text-white text-center flex items-center justify-center gap-2 sm:gap-4">
+                Projects
+                <CodeIcon className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-300" />
+              </h2>
             </motion.div>
-          </div>
+
+            <div className="p-4 sm:p-8 md:p-12 space-y-6 sm:space-y-8">
+              <ProjectFilter
+                categories={categories}
+                activeFilter={activeFilter}
+                onFilterChange={setActiveFilter}
+              />
+
+              {filteredProjects.length > 0 ? (
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+                  {filteredProjects.map(project => (
+                    <ProjectCard key={project.title} {...project} />
+                  ))}
+                </div>
+              ) : (
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-center py-8 sm:py-12 space-y-4"
+                >
+                  <MountainIcon className="w-12 h-12 sm:w-16 sm:h-16 text-gray-300 mx-auto" />
+                  <p className="text-lg sm:text-xl text-gray-500 font-semibold">
+                    No projects found in this category
+                  </p>
+                  <p className="text-gray-400">
+                    Try selecting a different filter
+                  </p>
+                </motion.div>
+              )}
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </div>
