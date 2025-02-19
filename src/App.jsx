@@ -1,15 +1,17 @@
-import React, { useState, useMemo, useEffect } from "react";
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import React, { useState, useMemo } from "react";
+import { motion, AnimatePresence } from 'framer-motion';
 import { ProjectCard } from "./components/ProjectCard";
 import { ProjectFilter } from "./components/ProjectFilter";
 import { ProfileSection } from "./components/ProfileSection";
 import { ToolsSection } from "./components/ToolsSection";
+import SkillsSection  from "./components/SkillsSection";
+import { CodeIcon, MountainIcon, ChevronDownIcon } from "lucide-react";
 import { PROJECTS } from "./data/projects";
-import { StarIcon, MountainIcon, CodeIcon } from "lucide-react";
 import "./App.css";
 
 function App() {
   const [activeFilter, setActiveFilter] = useState("All");
+  const [isOpen, setIsOpen] = useState(true);
 
   const categories = useMemo(() => {
     const allCategories = PROJECTS.flatMap(project => project.categories);
@@ -44,10 +46,14 @@ function App() {
           className="space-y-8 sm:space-y-16"
         >
           <ProfileSection />
+          <SkillsSection />
           <ToolsSection />
 
           <motion.div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
-            <motion.div className="bg-gradient-to-r from-black via-gray-700 to-gray-500 p-4 sm:p-6 relative overflow-hidden">
+            <motion.div 
+              className="bg-gradient-to-r from-gray-600 via-gray-800 to-black p-4 sm:p-6 relative overflow-hidden cursor-pointer"
+              onClick={() => setIsOpen(!isOpen)}
+            >
               <motion.div 
                 className="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-600 opacity-20"
                 animate={{
@@ -59,41 +65,58 @@ function App() {
                   repeat: Infinity,
                 }}
               />
-              <h2 className="text-2xl sm:text-4xl font-bold text-white text-center flex items-center justify-center gap-2 sm:gap-4">
-                Projects
-                <CodeIcon className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-300" />
-              </h2>
+              <div className="relative flex items-center justify-between w-full">
+                <div className="w-6" />
+                <h2 className="text-3xl sm:text-5xl font-bold text-white flex items-center gap-2 sm:gap-4">
+                  Projects
+                  <CodeIcon className="w-8 h-8 sm:w-6 sm:h-6 text-yellow-300" />
+                </h2>
+                <ChevronDownIcon 
+                  className={`w-6 h-6 text-white transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                />
+              </div>
             </motion.div>
 
-            <div className="p-4 sm:p-8 md:p-12 space-y-6 sm:space-y-8">
-              <ProjectFilter
-                categories={categories}
-                activeFilter={activeFilter}
-                onFilterChange={setActiveFilter}
-              />
-
-              {filteredProjects.length > 0 ? (
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-                  {filteredProjects.map(project => (
-                    <ProjectCard key={project.title} {...project} />
-                  ))}
-                </div>
-              ) : (
-                <motion.div 
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="text-center py-8 sm:py-12 space-y-4"
+            <AnimatePresence initial={false}>
+              {isOpen && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
                 >
-                  <MountainIcon className="w-12 h-12 sm:w-16 sm:h-16 text-gray-300 mx-auto" />
-                  <p className="text-lg sm:text-xl text-gray-500 font-semibold">
-                    No projects found in this category
-                  </p>
-                  <p className="text-gray-400">
-                    Try selecting a different filter
-                  </p>
+                  <div className="p-4 sm:p-8 md:p-12 space-y-6 sm:space-y-8">
+                    <ProjectFilter
+                      categories={categories}
+                      activeFilter={activeFilter}
+                      onFilterChange={setActiveFilter}
+                    />
+
+                    {filteredProjects.length > 0 ? (
+                      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+                        {filteredProjects.map(project => (
+                          <ProjectCard key={project.title} {...project} />
+                        ))}
+                      </div>
+                    ) : (
+                      <motion.div 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="text-center py-8 sm:py-12 space-y-4"
+                      >
+                        <MountainIcon className="w-12 h-12 sm:w-16 sm:h-16 text-gray-300 mx-auto" />
+                        <p className="text-lg sm:text-xl text-gray-500 font-semibold">
+                          No projects found in this category
+                        </p>
+                        <p className="text-gray-400">
+                          Try selecting a different filter
+                        </p>
+                      </motion.div>
+                    )}
+                  </div>
                 </motion.div>
               )}
-            </div>
+            </AnimatePresence>
           </motion.div>
         </motion.div>
       </div>
