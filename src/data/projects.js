@@ -75,7 +75,7 @@ export const PROJECTS = [
     title: "TransporMap",
     description:
       "Java app that lets users report real-time road hazards and obstructions, reshaping urban mobility.",
-    tags: ["Java", "Geography", "Maps", "Social", "Transport"],
+    tags: ["Java", "Geography", "Maps", "Social", "Transport", "Databases"],
     categories: [],
     image: TransporMap,
     githubLink: "https://github.com/jhanhrndz/transpormap",
