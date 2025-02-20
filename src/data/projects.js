@@ -9,6 +9,7 @@ import TaskList from "../assets/images/projects/task_list.jpg"
 import Accidentality from "../assets/images/projects/Accidentality.jpg"
 import ECommerce from "../assets/images/projects/E-commerce.jpg"
 import Comparendo from "../assets/images/projects/Comparendo.png"
+import TransporMap from "../assets/images/projects/transpormap.png"
 
 export const COLORS = {
   primary: {
@@ -69,6 +70,16 @@ export const PROJECTS = [
     githubLink: "https://github.com/Nasor2/study_case_cheating",
     demoLink: "https://nasor2.github.io/study_case_cheating/",
     impact: "Infidelity behavior patterns explored.",
+  },
+  {
+    title: "TransporMap",
+    description:
+      "Java app that lets users report real-time road hazards and obstructions, reshaping urban mobility.",
+    tags: ["Java", "Geography", "Maps", "Social", "Transport"],
+    categories: [],
+    image: TransporMap,
+    githubLink: "https://github.com/jhanhrndz/transpormap",
+    impact: "Empowering users for safer urban mobility.",
   },
   {
     title: "Calculator",
