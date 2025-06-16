@@ -13,7 +13,7 @@ import TransporMap from "../assets/images/projects/transpormap.png"
 import buldsafe from "../assets/images/projects/buldsafe.jpeg"
 import healths from "../assets/images/projects/healths.png"
 import imson from "../assets/images/projects/insom.png"
-
+import rloco from "../assets/images/projects/rloco.jpeg"
 export const COLORS = {
   primary: {
     dark: "#1F2937",
@@ -81,6 +81,16 @@ export const PROJECTS = [
     githubLink: "https://github.com/Nasor2/tiendaYa-project",
     demoLink: "https://www.youtube.com/watch?v=r4Y944mHQAA",
     impact: "Enhancing local eCommerce and digital accessibility.",
+  },
+  {
+    title: "Inferential Statistics Case Study Practices with R",
+    description:
+      "Practices with R of Inferential Statistics case studies and examples from course college.",
+    tags: ["Data Analysis", "R", "R Studio", "Machine Learning", "Linear Regression", "ANOVA", "Hypothesis test"],
+    categories: ["Data Analysis"],
+    image: rloco,
+    githubLink: "https://github.com/Nasor2/r-inferential-statistics-practicecs",
+    impact: "Enhances statistical reasoning and real-world data analysis skills using R.",
   },
   {
     title: "Accidentality in Barranquilla Colombia",
