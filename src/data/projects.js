@@ -10,6 +10,9 @@ import Accidentality from "../assets/images/projects/Accidentality.jpg"
 import ECommerce from "../assets/images/projects/E-commerce.jpg"
 import Comparendo from "../assets/images/projects/Comparendo.png"
 import TransporMap from "../assets/images/projects/transpormap.png"
+import buldsafe from "../assets/images/projects/buldsafe.jpeg"
+import healths from "../assets/images/projects/healths.png"
+import imson from "../assets/images/projects/insom.png"
 
 export const COLORS = {
   primary: {
@@ -30,6 +33,34 @@ export const COLORS = {
 };
 
 export const PROJECTS = [
+  
+  {
+    title: "BuildSafe",
+    description: "Smart Safety Management and Monitoring for Personal Protective Equipment (PPE) Compliance on Construction Sites",
+    tags: ["Data Analysis", "Python", "Data Visualization", "Analysis", "Machine Learning", "React", "FireBase", "MySQL", "IA", "Computer Vision",],
+    categories: ["Web Development", "Data Science", "Data Analysis"],
+    image: buldsafe,
+    demoLink: "https://www.youtube.com/watch?v=4gsLCIfnlEg",
+    impact: "Improve security in construction projects"
+  },{
+    title: "Machine Learning for Heart Disease Detection",
+    description: "This project compares ML models (SVM, decision tree, logistic regression) using clinical data to predict heart disease.",
+    tags: ["Data Analysis", "Python", "Data Visualization", "Analysis", "Machine Learning", "IA",],
+    categories: ["Data Science", "Data Analysis"],
+    image: healths,
+    colabLink: "https://colab.research.google.com/drive/11nkOb0NFLhBhXwCSdfmz_OPiR5pj5YbH?usp=sharing",
+    impact: "It highlights AI's potential to support accurate and early medical diagnosis."
+  },
+  {
+    title: "Sleep Health and Lifestyle Disorder Prediction",
+    description: "This project uses clinical and lifestyle data to train machine learning models (logistic regression and MLP) to classify sleep disorders such as insomnia and sleep apnea.",
+    tags: ["Data Analysis", "Python", "Data Visualization", "Analysis", "Machine Learning"],
+    categories: ["Data Science", "Data Analysis"],
+    image: imson,
+    colabLink: "https://colab.research.google.com/drive/1CxhcjP1FyA5cQMqSd-fRPsEpxN2Nu76N?usp=sharing",
+    impact: "Demostrates the potential of AI to analyze health patterns and support early detection of sleep-related conditions.",
+  }
+  ,
   {
     title: "Traffic Fines Analysis in Barranquilla",
     description: "Analysis of traffic fines in Barranquilla, uncovering trends and violations.",
@@ -48,6 +79,7 @@ export const PROJECTS = [
     categories: ["Web Development"],
     image: ECommerce,
     githubLink: "https://github.com/Nasor2/tiendaYa-project",
+    demoLink: "https://www.youtube.com/watch?v=r4Y944mHQAA",
     impact: "Enhancing local eCommerce and digital accessibility.",
   },
   {

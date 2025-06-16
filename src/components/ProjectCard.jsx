@@ -1,6 +1,8 @@
 import React from "react";
 import { Globe, Github, Award } from "lucide-react";
 import kaggle from "../assets/images/Icons/kaggle_k_short.svg";
+import { a } from "framer-motion/client";
+import colab from "../assets/images/Icons/Google_Colaboratory_SVG_Logo.svg"
 
 export const ProjectCard = ({
   title,
@@ -10,6 +12,7 @@ export const ProjectCard = ({
   githubLink,
   demoLink,
   kaggleLink,
+  colabLink,
   impact,
 }) => (
   <div className="bg-white rounded-xl sm:rounded-3xl overflow-hidden shadow-lg sm:shadow-2xl border border-gray-100 transform transition-all hover:shadow-3xl group flex flex-col h-full hover:scale-[1.01]">
@@ -87,6 +90,22 @@ export const ProjectCard = ({
           >
             <Globe size={16} className="sm:w-5 sm:h-5 group-hover:animate-ping" />
             <span className="text-sm sm:text-base">Demo</span>
+          </a>
+        )}
+
+        {colabLink && (
+          <a
+            href={colabLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-grow text-center bg-gradient-to-r from-gray-200 to-gray-100 text-black py-2 sm:py-3 rounded-xl hover:opacity-90 transition-all duration-500 flex items-center justify-center space-x-2 group shadow-lg hover:shadow-2xl"
+          >
+            <img
+              src={colab}
+              alt="Google Colab"
+              className="h-5 group-hover:scale-125 transition-transform"
+            />
+            <span className="text-sm sm:text-base">Google Colaboratory</span>
           </a>
         )}
       </div>
