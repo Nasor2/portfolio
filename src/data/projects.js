@@ -123,6 +123,8 @@ export const PROJECTS = [
     githubLink: "https://github.com/jhanhrndz/transpormap",
     impact: "Empowering users for safer urban mobility.",
   },
+
+  /*
   {
     title: "Calculator",
     description:
@@ -189,4 +191,5 @@ export const PROJECTS = [
     demoLink: "https://tasks-list-roan.vercel.app/",
     impact: "Displays Pokémon data interactively.",
   },
+  */
 ];
