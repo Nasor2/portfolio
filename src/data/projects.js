@@ -1,11 +1,5 @@
 // src/data/projects.js
 import Cheating from "../assets/images/projects/cheating.jpg";
-import Calculator from "../assets/images/projects/calculator.jpg";
-import Etch_a_Sketch from "../assets/images/projects/Etch-a-sketch.jpg";
-import Roc_paper_scisscors from "../assets/images/projects/rock-paper-scisscors.jpg";
-import Mood from "../assets/images/projects/Mood.jpg"
-import Pokemons from "../assets/images/projects/pokemons.jpg"
-import TaskList from "../assets/images/projects/task_list.jpg"
 import Accidentality from "../assets/images/projects/Accidentality.jpg"
 import ECommerce from "../assets/images/projects/E-commerce.jpg"
 import Comparendo from "../assets/images/projects/Comparendo.png"

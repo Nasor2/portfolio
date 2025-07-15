@@ -100,9 +100,8 @@ export const ProfileSection = () => {
           </h1>
 
           <p className="text-gray-800 mt-4 text-sm sm:text-base md:text-lg leading-relaxed group tracking-wide px-2 sm:px-4 lg:px-0">
-            Innovative Systems Engineer transforming complex data into powerful insights. 
-            Expert in bridging advanced analytics with cutting-edge technologies to deliver 
-            high-impact solutions that push the boundaries of what's possible.
+            Backend-focused Systems Engineer with solid experience in Java and Spring Boot. Skilled in designing clean architectures, integrating databases, and building maintainable APIs.<br />
+            I also have a background in Data Science and Artificial Intelligence, which enhances my problem-solving approach, even though I apply them in separate contexts.
             <motion.span 
               initial={{ opacity: 0 }}
               whileHover={{ opacity: 1 }}
