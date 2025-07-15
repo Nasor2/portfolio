@@ -10,6 +10,7 @@ import { PROJECTS } from "./data/projects";
 import "./App.css";
 import Footer from "./components/Footer";
 
+//Inicio
 function App() {
   const [activeFilter, setActiveFilter] = useState("All");
   const [isOpen, setIsOpen] = useState(true);
