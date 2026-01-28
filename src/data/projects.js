@@ -8,6 +8,8 @@ import buldsafe from "../assets/images/projects/buldsafe.jpeg"
 import healths from "../assets/images/projects/healths.png"
 import imson from "../assets/images/projects/insom.png"
 import rloco from "../assets/images/projects/rloco.jpeg"
+import oriel from "../assets/images/projects/oriel_logo.jpeg"
+
 export const COLORS = {
   primary: {
     dark: "#1F2937",
@@ -27,7 +29,16 @@ export const COLORS = {
 };
 
 export const PROJECTS = [
-  
+
+  {
+    title: "ORIEL: Intelligent Assistance for Visual Impairment People",
+    description: "Visual assistant for people with visual impairment.",
+    tags: ["Deep Learning","IA", "Computer Vision", "Assistent", "Voice recognition", "Data Analysis", "System Architecture"],
+    categories: ["Data Science", "Data Analysis"],
+    image: oriel,
+    githubLink: "https://github.com/Nasor2/oriel",
+    impact: "Enhance autonomy for visually impaired people"
+  },
   {
     title: "BuildSafe",
     description: "Smart Safety Management and Monitoring for Personal Protective Equipment (PPE) Compliance on Construction Sites",
@@ -36,7 +47,8 @@ export const PROJECTS = [
     image: buldsafe,
     demoLink: "https://www.youtube.com/watch?v=4gsLCIfnlEg",
     impact: "Improve security in construction projects"
-  },{
+  },
+  {
     title: "Machine Learning for Heart Disease Detection",
     description: "This project compares ML models (SVM, decision tree, logistic regression) using clinical data to predict heart disease.",
     tags: ["Data Analysis", "Python", "Data Visualization", "Analysis", "Machine Learning", "IA",],
