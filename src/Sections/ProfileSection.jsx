@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Linkedin, Mail, GithubIcon } from "lucide-react";
-import profileImage from "../assets/images/Fotojpg.jpg";
+import profileImage from "../assets/images/Fotojpg.png";
 import KaggleLogo from "../assets/images/Icons/kaggle_k_short.svg";
 
 export const ProfileSection = () => {
