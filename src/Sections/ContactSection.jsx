@@ -1,67 +1,55 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MessageSquare, Send } from 'lucide-react';
+import { Mail, MessageCircle } from 'lucide-react';
 
 const ContactSection = () => {
+  const contactMethods = [
+    {
+      title: "Email",
+      icon: Mail,
+      href: "mailto:penaortegasamuel@gmail.com",
+    },
+    {
+      title: "WhatsApp",
+      icon: MessageCircle,
+      href: "https://wa.me/573012345678",
+    }
+  ];
+
   return (
-    <motion.section
+    <motion.div
       id="contact"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto"
+      className="border-t border-gray-200 pt-12 space-y-6"
     >
-      <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-800">Let's Connect</h2>
-        <p className="text-gray-600 mt-2">Have a project in mind? Let's talk about it.</p>
+      <div>
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">Get in Touch</h2>
+        <p className="text-gray-600 text-sm">Let&apos;s connect and discuss opportunities</p>
       </div>
 
-      <form className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Name</label>
-            <input 
-              type="text"
-              className="mt-1 w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Email</label>
-            <input 
-              type="email"
-              className="mt-1 w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700">Message</label>
-          <textarea 
-            rows={4}
-            className="mt-1 w-full rounded-lg border border-gray-300 p-3 focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-
-        <button 
-          type="submit"
-          className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
-        >
-          <Send className="w-4 h-4" />
-          Send Message
-        </button>
-      </form>
-
-      <div className="mt-12 flex justify-center gap-8">
-        <a href="mailto:contact@example.com" className="flex items-center gap-2 text-gray-600 hover:text-blue-600">
-          <Mail className="w-5 h-5" />
-          Email
-        </a>
-        <a href="#" className="flex items-center gap-2 text-gray-600 hover:text-blue-600">
-          <MessageSquare className="w-5 h-5" />
-          Schedule a Call
-        </a>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {contactMethods.map((method, index) => (
+          <motion.a
+            key={method.title}
+            href={method.href}
+            target={method.title === "WhatsApp" ? "_blank" : "_self"}
+            rel={method.title === "WhatsApp" ? "noopener noreferrer" : ""}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1, duration: 0.4 }}
+            className="border border-gray-200 rounded p-4 hover:border-gray-300 transition-colors flex items-center gap-3"
+          >
+            <div className="flex-shrink-0">
+              <method.icon className="w-5 h-5 text-gray-700" />
+            </div>
+            <h3 className="font-medium text-gray-900 text-sm">
+              {method.title}
+            </h3>
+          </motion.a>
+        ))}
       </div>
-    </motion.section>
+    </motion.div>
   );
 };
 

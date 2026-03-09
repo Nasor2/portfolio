@@ -16,13 +16,14 @@ import SpringBoot from "../assets/images/Icons/spring.png"
 import Maven from "../assets/images/Icons/maven2.png"
 import Swagger from "../assets/images/Icons/swagger.png"
 import tailwindcss from "../assets/images/Icons/tailwindcss.png"
+import nextjs from "../assets/images/Icons/nextjs.png"
+import redis from "../assets/images/Icons/redis.png"
 
 export const TOOL_CATEGORIES = [
   {
     name: "Data Science & Analytics",
     tools: [
       { name: "Python", icon: Python },
-      { name: "Scikit-learn", icon: ScikitLearn },
       { name: "Excel", icon: Excel },
     ]
   },
@@ -39,9 +40,8 @@ export const TOOL_CATEGORIES = [
     name: "Front-end Development",
     tools: [
       { name: "TypeScript", icon: TypeScript },
-      { name: "Angular", icon: angular },
+      { name: "Next.js", icon: nextjs },
       { name: "React", icon: react },
-      { name: "Bootstrap", icon: BootStrap },
       { name: "Tailwind CSS", icon: tailwindcss }
 
     ]
@@ -51,6 +51,7 @@ export const TOOL_CATEGORIES = [
     tools: [
       { name: "MySQL", icon: MySQL },
       { name: "PostgreSQL", icon: PostgreSQL },
+      { name: "Redis", icon: redis },
       { name: "Docker", icon: Docker },
       { name: "Google Cloud Platform", icon: GCloudPlatform },
       { name: "AWS", icon: AWS }

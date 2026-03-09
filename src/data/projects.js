@@ -9,6 +9,10 @@ import healths from "../assets/images/projects/healths.png"
 import imson from "../assets/images/projects/insom.png"
 import rloco from "../assets/images/projects/rloco.jpeg"
 import oriel from "../assets/images/projects/oriel_logo.jpeg"
+import microservicios from "../assets/images/projects/contrato-de-compraventa.png"
+import roleauth from "../assets/images/projects/User-Authentication_-Understanding-the-Basics-Top-Tips.jpg"
+import post from "../assets/images/projects/10-Best-Practices-for-High-Performing-LinkedIn-Posts-Apr-02-2024-09-24-47-6424-PM.png"
+import booking from "../assets/images/projects/reservar_hotel_en_ingles.jpg"
 
 export const COLORS = {
   primary: {
@@ -34,7 +38,7 @@ export const PROJECTS = [
     title: "ORIEL: Intelligent Assistance for Visual Impairment People",
     description: "Visual assistant for people with visual impairment.",
     tags: ["Deep Learning","IA", "Computer Vision", "Assistent", "Voice recognition", "Data Analysis", "System Architecture"],
-    categories: ["Data Science", "Data Analysis"],
+    categories: ["Data Science & Data Analysis"],
     image: oriel,
     githubLink: "https://github.com/Nasor2/oriel",
     impact: "Enhance autonomy for visually impaired people"
@@ -43,41 +47,12 @@ export const PROJECTS = [
     title: "BuildSafe",
     description: "Smart Safety Management and Monitoring for Personal Protective Equipment (PPE) Compliance on Construction Sites",
     tags: ["Data Analysis", "Python", "Data Visualization", "Analysis", "Machine Learning", "React", "FireBase", "MySQL", "IA", "Computer Vision",],
-    categories: ["Web Development", "Data Science", "Data Analysis"],
+    categories: ["Web Development", "Data Science & Data Analysis"],
     image: buldsafe,
     demoLink: "https://www.youtube.com/watch?v=4gsLCIfnlEg",
     impact: "Improve security in construction projects"
   },
-  {
-    title: "Machine Learning for Heart Disease Detection",
-    description: "This project compares ML models (SVM, decision tree, logistic regression) using clinical data to predict heart disease.",
-    tags: ["Data Analysis", "Python", "Data Visualization", "Analysis", "Machine Learning", "IA",],
-    categories: ["Data Science", "Data Analysis"],
-    image: healths,
-    colabLink: "https://colab.research.google.com/drive/11nkOb0NFLhBhXwCSdfmz_OPiR5pj5YbH?usp=sharing",
-    impact: "It highlights AI's potential to support accurate and early medical diagnosis."
-  },
-  {
-    title: "Sleep Health and Lifestyle Disorder Prediction",
-    description: "This project uses clinical and lifestyle data to train machine learning models (logistic regression and MLP) to classify sleep disorders such as insomnia and sleep apnea.",
-    tags: ["Data Analysis", "Python", "Data Visualization", "Analysis", "Machine Learning"],
-    categories: ["Data Science", "Data Analysis"],
-    image: imson,
-    colabLink: "https://colab.research.google.com/drive/1CxhcjP1FyA5cQMqSd-fRPsEpxN2Nu76N?usp=sharing",
-    impact: "Demostrates the potential of AI to analyze health patterns and support early detection of sleep-related conditions.",
-  }
-  ,
-  {
-    title: "Traffic Fines Analysis in Barranquilla",
-    description: "Analysis of traffic fines in Barranquilla, uncovering trends and violations.",
-    tags: ["Data Analysis", "Python", "Data Visualization", "Analysis", "Machine Learning"],
-    categories: ["Data Science", "Data Analysis"],
-    image: Comparendo,
-    kaggleLink: "https://www.kaggle.com/code/samuelpeaortega/comparendos-en-barranquilla-colombia",
-    impact: "Insights into traffic violations.",
-  }
-  ,
-  {
+   {
     title: "TiendaYa: eCommerce in Barranquilla",
     description:
       "E-commerce platform for Barranquilla shopkeepers to easily go digital.",
@@ -89,36 +64,37 @@ export const PROJECTS = [
     impact: "Enhancing local eCommerce and digital accessibility.",
   },
   {
-    title: "Inferential Statistics Case Study Practices with R",
-    description:
-      "Practices with R of Inferential Statistics case studies and examples from course college.",
-    tags: ["Data Analysis", "R", "R Studio", "Machine Learning", "Linear Regression", "ANOVA", "Hypothesis test"],
-    categories: ["Data Analysis"],
-    image: rloco,
-    githubLink: "https://github.com/Nasor2/r-inferential-statistics-practicecs",
-    impact: "Enhances statistical reasoning and real-world data analysis skills using R.",
+    title: "Purchase of real estate API",
+    description: "Spring Boot API for real estate purchase management.",
+    tags: ["Java", "Spring Boot", "API", "Microservices", "SQL", "Api Gateway", "Eureka", "Docker", "Swagger"],
+    image: microservicios,
+    githubLink: "https://github.com/Nasor2/spring-boot-microservice-practice-inmueble-compra",
+    impact: "Facilitates organized and reliable property purchase processes.",
   },
   {
-    title: "Accidentality in Barranquilla Colombia",
-    description:
-      "Analyzed traffic accidents in Barranquilla to identify patterns and predict severity, aiding in safety improvements.",
-    tags: ["Data Science", "Data Analysis", "Python", "Machine Learning", "Geospatial Analysis"],
-    categories: ["Data Science", "Data Analysis"],
-    image: Accidentality,
-     kaggleLink: "https://www.kaggle.com/code/samuelpeaortega/accidentality-in-barranquilla-colombia",
-    impact: "Improves safety with data-driven insights.",
-  },
-  {
-    title: "Case Study: Cheating",
-    description:
-      "A study analyzing factors contributing to infidelity, using data science to build predictive models and provide insights.",
-    tags: ["Data Analysis", "Python", "Data Visualization", "Analysis"],
-    categories: ["Data Science", "Data Analysis", "Web Development"],
-    image: Cheating,
-    githubLink: "https://github.com/Nasor2/study_case_cheating",
-    demoLink: "https://nasor2.github.io/study_case_cheating/",
-    impact: "Infidelity behavior patterns explored.",
-  },
+  title: "Role Auth API",
+  description: "Spring Boot API implementing role-based authentication and authorization.",
+  tags: ["Java", "Spring Boot", "Spring Security", "JWT", "Authentication", "REST API", "Docker", "Swagger"],
+  image: roleauth,
+  githubLink: "https://github.com/Nasor2/role-auth-api",
+  impact: "Provides secure user authentication and role-based access control."
+},
+{
+  title: "Posts API",
+  description: "Spring Boot REST API for managing user posts and content.",
+  tags: ["Java", "Spring Boot", "REST API", "CRUD", "SQL", "Redis", "Docker", "Swagger"],
+  image: post,
+  githubLink: "https://github.com/Nasor2/posts-api",
+  impact: "Enables structured management of user-generated content."
+},
+{
+  title: "Hotel Booking API",
+  description: "Spring Boot REST API for managing hotel room reservations.",
+  tags: ["Java", "Spring Boot", "REST API", "Booking System", "SQL", "Docker", "Swagger"],
+  image: booking,
+  githubLink: "https://github.com/Nasor2/hotel-booking-api",
+  impact: "Simplifies hotel room booking and reservation management."
+},
   {
     title: "TransporMap",
     description:
@@ -129,8 +105,73 @@ export const PROJECTS = [
     githubLink: "https://github.com/jhanhrndz/transpormap",
     impact: "Empowering users for safer urban mobility.",
   },
+  {
+    title: "Heart Disease Detection",
+    description: "This project compares ML models (SVM, decision tree, logistic regression) using clinical data to predict heart disease.",
+    tags: ["Data Analysis", "Python", "Data Visualization", "Analysis", "Machine Learning", "IA",],
+    categories: ["Data Science & Data Analysis"],
+    image: healths,
+    colabLink: "https://colab.research.google.com/drive/11nkOb0NFLhBhXwCSdfmz_OPiR5pj5YbH?usp=sharing",
+    impact: "It highlights AI's potential to support accurate and early medical diagnosis."
+  },
+  {
+    title: "Sleep Health and Lifestyle Disorder Prediction",
+    description: "This project uses clinical and lifestyle data to train machine learning models (logistic regression and MLP) to classify sleep disorders such as insomnia and sleep apnea.",
+    tags: ["Data Analysis", "Python", "Data Visualization", "Analysis", "Machine Learning"],
+    categories: ["Data Science & Data Analysis"],
+    image: imson,
+    colabLink: "https://colab.research.google.com/drive/1CxhcjP1FyA5cQMqSd-fRPsEpxN2Nu76N?usp=sharing",
+    impact: "Demostrates the potential of AI to analyze health patterns and support early detection of sleep-related conditions.",
+  }
+  ,
+  {
+    title: "Traffic Fines Analysis in Barranquilla",
+    description: "Analysis of traffic fines in Barranquilla, uncovering trends and violations.",
+    tags: ["Data Analysis", "Python", "Data Visualization", "Analysis", "Machine Learning"],
+    categories: ["Data Science & Data Analysis"],
+    image: Comparendo,
+    kaggleLink: "https://www.kaggle.com/code/samuelpeaortega/comparendos-en-barranquilla-colombia",
+    impact: "Insights into traffic violations.",
+  }
+  ,
+  {
+    title: "Accidentality in Barranquilla Colombia",
+    description:
+      "Analyzed traffic accidents in Barranquilla to identify patterns and predict severity, aiding in safety improvements.",
+    tags: ["Data Science & Data Analysis", "Data Analysis", "Python", "Machine Learning", "Geospatial Analysis"],
+    categories: ["Data Science & Data Analysis"],
+    image: Accidentality,
+     kaggleLink: "https://www.kaggle.com/code/samuelpeaortega/accidentality-in-barranquilla-colombia",
+    impact: "Improves safety with data-driven insights.",
+  }
+  
+  /*,
+  
+ 
+  {
+    title: "Inferential Statistics Case Study Practices with R",
+    description:
+      "Practices with R of Inferential Statistics case studies and examples from course college.",
+    tags: ["Data Analysis", "R", "R Studio", "Machine Learning", "Linear Regression", "ANOVA", "Hypothesis test"],
+    categories: ["Data Science & Data Analysis"],
+    image: rloco,
+    githubLink: "https://github.com/Nasor2/r-inferential-statistics-practicecs",
+    impact: "Enhances statistical reasoning and real-world data analysis skills using R.",
+  },
+  {
+    title: "Case Study: Cheating",
+    description:
+      "A study analyzing factors contributing to infidelity, using data science to build predictive models and provide insights.",
+    tags: ["Data Analysis", "Python", "Data Visualization", "Analysis"],
+    categories: ["Data Science & Data Analysis", "Web Development"],
+    image: Cheating,
+    githubLink: "https://github.com/Nasor2/study_case_cheating",
+    demoLink: "https://nasor2.github.io/study_case_cheating/",
+    impact: "Infidelity behavior patterns explored.",
+  },
+  
 
-  /*
+  
   {
     title: "Calculator",
     description:

@@ -1,42 +1,41 @@
-import React, { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Linkedin, Mail, GithubIcon } from "lucide-react";
+import React, { useState, useRef } from "react";
+import { motion } from "framer-motion";
+import { Linkedin, Mail, GithubIcon, MessageCircle } from "lucide-react";
 import profileImage from "../assets/images/Fotojpg.png";
 import KaggleLogo from "../assets/images/Icons/kaggle_k_short.svg";
 
 export const ProfileSection = () => {
   const [hoveredLink, setHoveredLink] = useState(null);
-  const [backgroundVariant, setBackgroundVariant] = useState(0);
   const containerRef = useRef(null);
-
-  const backgroundVariants = [
-    "from-gray-100 to-gray-200",
-    "from-purple-100 to-purple-200",
-    "from-blue-100 to-blue-200",
-    "from-indigo-100 to-indigo-200"
-  ];
 
   const socialLinks = [
     {
       href: "https://www.linkedin.com/in/samuel-nissi/",
       icon: Linkedin,
-      bgGradient: "from-[#0077B5] to-[#00A0DC]",
-      hoverGradient: "from-[#00A0DC] to-[#0077B5]",
-      label: "LinkedIn"
+      label: "LinkedIn",
+      color: "from-blue-500 to-blue-600",
+      hoverColor: "from-blue-600 to-blue-700"
     },
     {
       href: "mailto:penaortegasamuel@gmail.com",
       icon: Mail,
-      bgGradient: "from-[#EA4335] to-[#FBBC05]",
-      hoverGradient: "from-[#FBBC05] to-[#EA4335]",
-      label: "Email"
+      label: "Email",
+      color: "from-red-500 to-pink-600",
+      hoverColor: "from-red-600 to-pink-700"
+    },
+    {
+      href: "https://wa.me/573245067826",
+      icon: MessageCircle,
+      label: "WhatsApp",
+      color: "from-green-500 to-green-600",
+      hoverColor: "from-green-600 to-green-700"
     },
     {
       href: "https://github.com/Nasor2",
       icon: GithubIcon,
-      bgGradient: "from-[#24292E] to-[#34D058]",
-      hoverGradient: "from-[#34D058] to-[#24292E]",
-      label: "GitHub"
+      label: "GitHub",
+      color: "from-gray-700 to-gray-900",
+      hoverColor: "from-gray-800 to-black"
     },
     {
       href: "https://www.kaggle.com/samuelpeaortega",
@@ -44,121 +43,154 @@ export const ProfileSection = () => {
         <img
           src={KaggleLogo}
           alt="Kaggle"
-          className="w-4 h-4 sm:w-5 sm:h-5 object-contain"
+          className="w-5 h-5 object-contain"
         />
       ),
-      bgGradient: "from-[#20BEFF] to-[#4BA2F2]",
-      hoverGradient: "from-[#4BA2F2] to-[#20BEFF]",
-      label: "Kaggle"
+      label: "Kaggle",
+      color: "from-blue-400 to-cyan-500",
+      hoverColor: "from-blue-500 to-cyan-600"
     }
   ];
 
   return (
     <motion.section
       ref={containerRef}
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.8, type: "spring", stiffness: 120 }}
-      className={`relative flex items-center rounded-xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 gap-4 sm:gap-6 md:gap-8 lg:gap-16 overflow-hidden flex-col lg:flex-row bg-gradient-to-br ${backgroundVariants[backgroundVariant]}`}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="relative w-full overflow-hidden"
     >
-      <div className="w-full sm:w-2/3 md:w-1/2 lg:w-1/3 z-10 relative">
-        <div className="relative group max-w-[200px] sm:max-w-[250px] md:max-w-[300px] w-full mx-auto">
+
+      {/* Main Content */}
+      <div className="relative z-10">
+        {/* Profile Image */}
+        <div className="flex justify-center mb-8">
           <motion.div
-            className="absolute -inset-2 bg-gradient-to-br from-gray-500 to-gray-600 rounded-full opacity-50 group-hover:opacity-70 transition-all duration-300 blur-xl"
-            animate={{
-              scale: [1, 1.05, 1]
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-
-          <div className="relative">
-            <img
-              src={profileImage}
-              alt="Samuel Peña"
-              className="relative rounded-full w-full aspect-square border-4 border-gray-500 object-cover shadow-2xl transition-all duration-300 ease-in-out group-hover:shadow-xl"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="relative"
+          >
+            {/* Animated Ring */}
+            <motion.div
+              className="absolute inset-0 rounded-full border-2 border-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-border"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             />
-          </div>
+            
+            {/* Image Container */}
+            <div className="relative w-44 h-44 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white shadow-2xl bg-white">
+              <img
+                src={profileImage}
+                alt="Samuel Peña"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Decorative Badge */}
+            <motion.div
+              className="absolute -bottom-2 -right-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1.5"
+              whileHover={{ scale: 1.1 }}
+            >
+              <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
+              Available
+            </motion.div>
+          </motion.div>
         </div>
-      </div>
 
-      <div className="w-full lg:w-2/3 z-10 text-center lg:text-left space-y-4 sm:space-y-6">
-        <div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-gray-600 to-black flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-2 lg:gap-4">
-            Samuel Peña
-            <motion.span
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5, type: "spring", stiffness: 300 }}
-              className="text-sm sm:text-base md:text-lg bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-3 py-1 sm:px-4 sm:py-2 rounded-full shadow-lg hover:scale-105 transition-transform"
-            >
+        {/* Text Content */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-center space-y-6"
+        >
+          {/* Name and Title */}
+          <div className="space-y-3">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900">
+              Samuel Peña
+            </h1>
+            
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent mx-auto max-w-xs"
+            />
+
+            <p className="text-xl md:text-2xl font-semibold text-gray-600">
               Systems Engineer
-            </motion.span>
-          </h1>
+            </p>
+          </div>
 
-          <p className="text-gray-800 mt-4 text-sm sm:text-base md:text-lg leading-relaxed group tracking-wide px-2 sm:px-4 lg:px-0">
-            Backend-focused Systems Engineer with solid experience in Java and Spring Boot. Skilled in designing clean architectures, integrating databases, and building maintainable APIs.<br />
-            I also have a background in Data Science and Artificial Intelligence, which enhances my problem-solving approach, even though I apply them in separate contexts.
-            <motion.span 
-              initial={{ opacity: 0 }}
-              whileHover={{ opacity: 1 }}
-              className="block mt-2 text-xs sm:text-sm text-gray-900 italic opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            >
-              Crafting the future, one data point at a time
-            </motion.span>
-          </p>
+          {/* Bio */}
+          <div className="max-w-2xl mx-auto">
+            <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+              Backend-focused Systems Engineer with solid experience in <span className="font-semibold text-blue-600">Java and Spring Boot</span>. I design clean architectures, integrate databases seamlessly, and build maintainable APIs.
+            </p>
+            <p className="text-gray-600 text-base md:text-lg leading-relaxed mt-3">
+              With a background in <span className="font-semibold text-purple-600">Data Science and AI</span>, I bring comprehensive problem-solving skills to every project.
+            </p>
+          </div>
 
-          <div className="flex flex-wrap gap-3 sm:gap-4 mt-4 sm:mt-6 justify-center lg:justify-start">
+
+          {/* Social Links */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.4 }}
+            className="flex justify-center gap-3 md:gap-4 py-4"
+          >
             {socialLinks.map((link, index) => (
               <motion.a
-                key={link.href}
+                key={link.label}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{
-                  scale: 1.15,
-                  transition: { duration: 0.2 }
-                }}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ 
                   opacity: 1, 
                   y: 0,
-                  transition: { 
-                    delay: index * 0.2,
-                    type: "spring", 
-                    stiffness: 300 
-                  } 
+                  transition: { delay: 0.4 + index * 0.03, duration: 0.3 }
                 }}
-                className={`p-2 sm:p-3 rounded-full bg-gradient-to-br ${link.bgGradient} text-white shadow-lg relative overflow-hidden group`}
+                whileHover={{ scale: 1.12, y: -4 }}
+                whileTap={{ scale: 0.95 }}
                 onMouseEnter={() => setHoveredLink(index)}
                 onMouseLeave={() => setHoveredLink(null)}
+                className={`relative p-3 md:p-4 rounded-full bg-gradient-to-br ${link.color} text-white shadow-lg hover:shadow-xl transition-shadow duration-200 group overflow-hidden cursor-pointer`}
               >
+                {/* Hover Background */}
                 <motion.div
-                  className={`absolute inset-0 bg-gradient-to-br ${link.hoverGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
-                  initial={{ scale: 0 }}
-                  whileHover={{ scale: 1 }}
+                  className={`absolute inset-0 bg-gradient-to-br ${link.hoverColor} opacity-0 group-hover:opacity-100 transition-opacity duration-200`}
                 />
-                {typeof link.icon === "function" ? (
-                  <link.icon />
-                ) : (
-                  <link.icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 relative z-10" />
-                )}
+
+                {/* Icon */}
+                <div className="relative z-10">
+                  {typeof link.icon === "function" ? (
+                    <link.icon />
+                  ) : (
+                    <link.icon className="w-5 h-5 md:w-6 md:h-6" />
+                  )}
+                </div>
+
+                {/* Label Tooltip */}
                 {hoveredLink === index && (
                   <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="absolute -bottom-6 sm:-bottom-8 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded-md whitespace-nowrap"
+                    initial={{ opacity: 0, scale: 0.9, y: 8 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.9, y: 8 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs font-semibold rounded-lg whitespace-nowrap pointer-events-none shadow-xl"
                   >
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900" />
                     {link.label}
                   </motion.div>
                 )}
               </motion.a>
             ))}
-          </div>
-        </div>
+          </motion.div>
+
+        </motion.div>
       </div>
     </motion.section>
   );
