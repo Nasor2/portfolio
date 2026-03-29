@@ -119,24 +119,22 @@ export const ProfileSection = () => {
           </div>
 
           {/* Bio */}
-          <div className="max-w-2xl mx-auto">
-            <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-              Systems Engineer focused on developing{" "}
-              <span className="font-semibold text-blue-600">
-                scalable and intelligent solutions
-              </span>
-              . Experienced in building web platforms, high-performance desktop
-              software, and AI-based intelligent systems.
-            </p>
-            <p className="text-gray-600 text-base md:text-lg leading-relaxed mt-3">
-              Specialized in transforming complex data into functional tools,
-              with a strong focus on{" "}
-              <span className="font-semibold text-purple-600">
-                process optimization
-              </span>{" "}
-              and delivering user-ready products.
-            </p>
-          </div>
+<div className="max-w-2xl mx-auto">
+  <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+    Systems Engineer focused on{" "}
+    <span className="font-semibold text-blue-600">
+      AI integration and intelligent automation
+    </span>
+    . Building AI-powered tools and automating business processes using LLMs, AWS, and Python.
+  </p>
+  <p className="text-gray-600 text-base md:text-lg leading-relaxed mt-3">
+    Passionate about turning complex processes into{" "}
+    <span className="font-semibold text-purple-600">
+      smart, scalable solutions
+    </span>{" "}
+    ready for real-world use.
+  </p>
+</div>
 
           {/* Social Links */}
           <motion.div
