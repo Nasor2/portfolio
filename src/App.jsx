@@ -9,6 +9,7 @@ import { CodeIcon, MountainIcon } from "lucide-react";
 import { PROJECTS } from "./data/projects";
 import "./App.css";
 import Footer from "./components/Footer";
+import EducationSection from "./Sections/EducationSection";
 
 //Inicio
 function App() {
@@ -17,7 +18,7 @@ function App() {
   return (
     <div className="min-h-screen relative">
       <Navbar />
-      
+
       <motion.div
         className="fixed -top-20 -left-20 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl z-0"
         animate={{
@@ -36,16 +37,30 @@ function App() {
           animate={{ opacity: 1, y: 0 }}
           className="space-y-8 sm:space-y-16"
         >
-          <section id="profile"><ProfileSection /></section>
+          <section id="profile">
+            <ProfileSection />
+          </section>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 auto-rows-fr">
-            <section id="skills" className="h-full"><SkillsSection /></section>
-            <section id="tools" className="h-full"><ToolsSection /></section>
+            <section id="skills" className="h-full">
+              <SkillsSection />
+            </section>
+            <section id="tools" className="h-full">
+              <ToolsSection />
+            </section>
           </div>
-          <section id="experience"><ExperienceSection /></section>
-          
-          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 auto-rows-fr">
+            <section id="experience" className="h-full">
+              <ExperienceSection />
+            </section>
+            <section id="education" className="h-full">
+              <EducationSection />
+            </section>
+          </div>
 
-          <motion.section id="projects" className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100">
+          <motion.section
+            id="projects"
+            className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100"
+          >
             <motion.div
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}

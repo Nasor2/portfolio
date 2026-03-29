@@ -64,6 +64,16 @@ export const PROJECTS = [
     impact: "Enhancing local eCommerce and digital accessibility.",
   },
   {
+    title: "TransporMap",
+    description:
+      "Java app that lets users report real-time road hazards and obstructions, reshaping urban mobility.",
+    tags: ["Java", "Geography", "Maps", "Social", "Transport", "Databases"],
+    categories: [],
+    image: TransporMap,
+    githubLink: "https://github.com/jhanhrndz/transpormap",
+    impact: "Empowering users for safer urban mobility.",
+  },
+  {
     title: "Purchase of real estate API",
     description: "Spring Boot API for real estate purchase management.",
     tags: ["Java", "Spring Boot", "API", "Microservices", "SQL", "Api Gateway", "Eureka", "Docker", "Swagger"],
@@ -95,16 +105,7 @@ export const PROJECTS = [
   githubLink: "https://github.com/Nasor2/hotel-booking-api",
   impact: "Simplifies hotel room booking and reservation management."
 },
-  {
-    title: "TransporMap",
-    description:
-      "Java app that lets users report real-time road hazards and obstructions, reshaping urban mobility.",
-    tags: ["Java", "Geography", "Maps", "Social", "Transport", "Databases"],
-    categories: [],
-    image: TransporMap,
-    githubLink: "https://github.com/jhanhrndz/transpormap",
-    impact: "Empowering users for safer urban mobility.",
-  },
+  
   {
     title: "Heart Disease Detection",
     description: "This project compares ML models (SVM, decision tree, logistic regression) using clinical data to predict heart disease.",

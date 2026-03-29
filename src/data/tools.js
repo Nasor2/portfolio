@@ -50,12 +50,11 @@ export const TOOL_CATEGORIES = [
     name: "Databases & Cloud",
     tools: [
       { name: "MySQL", icon: MySQL },
+      { name: "AWS", icon: AWS },
       { name: "PostgreSQL", icon: PostgreSQL },
       { name: "Redis", icon: redis },
       { name: "Docker", icon: Docker },
-      { name: "Google Cloud Platform", icon: GCloudPlatform },
-      { name: "AWS", icon: AWS }
-
+      { name: "Google Cloud Platform", icon: GCloudPlatform }
     ]
   }
 ];

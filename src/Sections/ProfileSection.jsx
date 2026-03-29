@@ -14,42 +14,38 @@ export const ProfileSection = () => {
       icon: Linkedin,
       label: "LinkedIn",
       color: "from-blue-500 to-blue-600",
-      hoverColor: "from-blue-600 to-blue-700"
+      hoverColor: "from-blue-600 to-blue-700",
     },
     {
       href: "mailto:penaortegasamuel@gmail.com",
       icon: Mail,
       label: "Email",
       color: "from-red-500 to-pink-600",
-      hoverColor: "from-red-600 to-pink-700"
+      hoverColor: "from-red-600 to-pink-700",
     },
     {
       href: "https://wa.me/573245067826",
       icon: MessageCircle,
       label: "WhatsApp",
       color: "from-green-500 to-green-600",
-      hoverColor: "from-green-600 to-green-700"
+      hoverColor: "from-green-600 to-green-700",
     },
     {
       href: "https://github.com/Nasor2",
       icon: GithubIcon,
       label: "GitHub",
       color: "from-gray-700 to-gray-900",
-      hoverColor: "from-gray-800 to-black"
+      hoverColor: "from-gray-800 to-black",
     },
     {
       href: "https://www.kaggle.com/samuelpeaortega",
       icon: () => (
-        <img
-          src={KaggleLogo}
-          alt="Kaggle"
-          className="w-5 h-5 object-contain"
-        />
+        <img src={KaggleLogo} alt="Kaggle" className="w-5 h-5 object-contain" />
       ),
       label: "Kaggle",
       color: "from-blue-400 to-cyan-500",
-      hoverColor: "from-blue-500 to-cyan-600"
-    }
+      hoverColor: "from-blue-500 to-cyan-600",
+    },
   ];
 
   return (
@@ -60,7 +56,6 @@ export const ProfileSection = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="relative w-full overflow-hidden"
     >
-
       {/* Main Content */}
       <div className="relative z-10">
         {/* Profile Image */}
@@ -77,7 +72,7 @@ export const ProfileSection = () => {
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             />
-            
+
             {/* Image Container */}
             <div className="relative w-44 h-44 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white shadow-2xl bg-white">
               <img
@@ -110,7 +105,7 @@ export const ProfileSection = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900">
               Samuel Peña
             </h1>
-            
+
             <motion.div
               initial={{ width: 0 }}
               animate={{ width: "100%" }}
@@ -126,13 +121,22 @@ export const ProfileSection = () => {
           {/* Bio */}
           <div className="max-w-2xl mx-auto">
             <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-              Backend-focused Systems Engineer with solid experience in <span className="font-semibold text-blue-600">Java and Spring Boot</span>. I design clean architectures, integrate databases seamlessly, and build maintainable APIs.
+              Systems Engineer focused on developing{" "}
+              <span className="font-semibold text-blue-600">
+                scalable and intelligent solutions
+              </span>
+              . Experienced in building web platforms, high-performance desktop
+              software, and AI-based intelligent systems.
             </p>
             <p className="text-gray-600 text-base md:text-lg leading-relaxed mt-3">
-              With a background in <span className="font-semibold text-purple-600">Data Science and AI</span>, I bring comprehensive problem-solving skills to every project.
+              Specialized in transforming complex data into functional tools,
+              with a strong focus on{" "}
+              <span className="font-semibold text-purple-600">
+                process optimization
+              </span>{" "}
+              and delivering user-ready products.
             </p>
           </div>
-
 
           {/* Social Links */}
           <motion.div
@@ -148,10 +152,10 @@ export const ProfileSection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 10 }}
-                animate={{ 
-                  opacity: 1, 
+                animate={{
+                  opacity: 1,
                   y: 0,
-                  transition: { delay: 0.4 + index * 0.03, duration: 0.3 }
+                  transition: { delay: 0.4 + index * 0.03, duration: 0.3 },
                 }}
                 whileHover={{ scale: 1.12, y: -4 }}
                 whileTap={{ scale: 0.95 }}
@@ -189,7 +193,6 @@ export const ProfileSection = () => {
               </motion.a>
             ))}
           </motion.div>
-
         </motion.div>
       </div>
     </motion.section>
